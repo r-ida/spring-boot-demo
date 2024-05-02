@@ -32,6 +32,9 @@ jobs:
         working-directory: ./complete
         run: ./gradlew build
 
+      - name: test
+        run: ls
+
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
