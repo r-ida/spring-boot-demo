@@ -28,7 +28,12 @@ jobs:
         working-directory: ./complete
         run: chmod +x ./gradlew
 
-
       - name: Build Complete with Gradle
         working-directory: ./complete
         run: ./gradlew build
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sample.zip
+          path: build/distributions/sample.zip
