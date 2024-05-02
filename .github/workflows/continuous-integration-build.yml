@@ -39,5 +39,5 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ./complete/build/libs/spring-boot-0.0.1-SNAPSHOT.jar
-          path: build/distributions/sample.zip
+          name: buildfile
+          path: /complete/build/libs/spring-boot-0.0.1-SNAPSHOT.jar
