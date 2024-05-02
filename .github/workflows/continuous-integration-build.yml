@@ -56,6 +56,6 @@ jobs:
         working-directory: ./complete
         run: chmod +x ./gradlew
         
-      - name: Build Complete with Gradle
+      - name: test run
         working-directory: ./complete
         run: ./gradlew test
