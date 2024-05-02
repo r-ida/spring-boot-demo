@@ -42,6 +42,20 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: ls
-  
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+          
+      - name: Make gradlew executable
+        working-directory: ./complete
+        run: chmod +x ./gradlew
+        
+      - name: Build Complete with Gradle
+        working-directory: ./complete
+        run: ./gradlew test
